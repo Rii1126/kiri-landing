@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiri</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="/css/fonts.css">
+  <link rel="stylesheet" href="/css/grads.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="assets/favicon-16x16.png">
+</head>
+
+<body class="bg-center bg-fixed" style="background-color:#101B26;">
+  <video class="object-cover opacity-75" autoplay muted loop id="headerVideo">
+    <source src="/assets/bg.mp4" type="video/mp4">
+  </video>
+  <!-- Navigation Bar -->
+  <nav class="px-10">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="#" class="text-white w-64 font-bold text-lg animate__animated animate__fadeIn">
+        <img src="/assets/logo.png" alt=""></a>
+      <div class="hidden z-10 md:small-block md:flex space-x-4 items-center" target="_blank">
+        <a href="#tokenomics" class="text-white text-md animate__animated animate__fadeIn"
+          style="font-family: 'Dotage'; cursor:pointer; text-shadow: 2px 2px 0 #101B26, -2px -2px 0 #101B26, 2px -2px 0 #101B26, -2px 2px 0 #101B26; animation-delay: 1.5s;">TOKENOMICS</a>
+        <button class="text-white text-md bg-blue-500 px-4 py-2 animate__animated animate__fadeIn"
+          style="background-color: #4DAEDA; color: #101B26; font-family: 'Dotage'; animation-delay: 2s;">
+          <a href="https://dexscreener.com/manta/0x19c9c5ee5e9d2a27e42679463c4b1fb630ab587f">View Map</a></button>
+      </div>
+      <!-- Hamburger menu for mobile -->
+      <div class="md:hidden w-8 pt-20">
+        <button id="menu_icon" class="text-white">
+          <img src="./assets/menu_icon.png" alt="Menu Icon" onclick="openModal()">
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <header
+    class="pb-36 flex flex-col sm:flex-col-reverse lg:flex-row justify-between items-center p-4 lg:px-16 xl:px-36bg-cover">
+    <!-- Left Container -->
+    <div class="flex flex-col z-10 justify-center items-center lg:items-start text-center lg:text-left lg:w-1/2 m-10">
+      <div
+        class="text-5xl z-10 lg:text-6xl xl:text-7xl leading-16 font-bold text-white strokewidth-2 strokecolor-#4DAEDA mb-10 animate__animated animate__fadeIn"
+        style="font-family: Dotage; text-shadow: 2px 2px 0 #101B26, -2px -2px 0 #101B26, 2px -2px 0 #101B26, -2px 2px 0 #101B26;">
+        $Kiri has chosen to guide you through Sui!
+      </div>
+      <p class="text-md text-white mb-10 animate__animated animate__fadeIn"
+        style="font-family: 'Dotage'; text-shadow: 2px 2px 0 #101B26, -2px -2px 0 #101B26, 2px -2px 0 #101B26, -2px 2px 0 #101B26; animation-delay: 0.5s;">
+        Remember, your choices will shape your journey ahead!
+      </p>
+      <div class="flex gap-4 mb-6 animate__animated animate__fadeIn" style="animation-delay: 1.5s;">
+        <p class="text-md text-white relative" id="smartContractAddress"
+          style="cursor:pointer; text-shadow: 2px 2px 0 #101B26, -2px -2px 0 #101B26, 2px -2px 0 #101B26, -2px 2px 0 #101B26;"
+          onclick="copySmartContractAddress()">
+          📋 CA: <span id="contractAddressText">0x7cF9937F62C9785910DE90c9296000f96D9B682E</span>
+          <span
+            class="copy-message absolute top-0 right-0 text-green-500 opacity-0 transition-opacity duration-500">Copied!</span>
+        </p>
+      </div>
+      <div class="flex gap-4 mb-10 animate__animated animate__fadeIn" style="animation-delay: 1s;">
+        <button class="text-white text-md bg-blue-500 px-4 py-2"
+          style="background-color: text-md #4DAEDA; font-family: 'Dotage'; color: #101B26;"><a href="https://izumi.finance/trade/swap" target="_blank">Ride $Kiri</a></button>
+        <button class="text-white text-md bg-blue-500 px-4 py-2"
+          style="background-color: #4DAEDA; font-family: 'Dotage'; color: #101B26;"><a href="https://ripple.com/xrp/ "
+            target="_blank">I'm midcurving this</a>
+        </button>
+      </div>
+      <div class="flex gap-4 drop-shadow-xl animate__animated animate__fadeIn" style="animation-delay: 1.5s;">
+        <div><a href="/" target="_blank"><img id="social" src="./assets/telegram.png"
+              class="animate__animated animate__fadeInUp"></a></div>
+        <div><a href="https://dexscreener.com/manta/0x19c9c5ee5e9d2a27e42679463c4b1fb630ab587f" target="_blank"><img
+              id="social" src="./assets/dexscreener.png" class="animate__animated animate__fadeInUp"></a></div>
+        <div><a href="/" target="_blank"><img id="social" src="./assets/x.png"
+              class="animate__animated animate__fadeInUp"></a></div>
+        <div><a href="h/" target="_blank"><img id="social" src="./assets/github.png"
+              class="animate__animated animate__fadeInUp"></a></div>
+      </div>
+    </div>
+
+    <!-- Right Container -->
+    <div class="mt-4 hidden sm:-mb-24 sm:block lg:mt-0 lg:w-1/2 animate__animated animate__fadeIn">
+      <img class="sm:w-96 lg:mb-80 xl:w-max" src="/" alt="Hero Image"
+        class="object-cover w-full h-full animate__animated animate__fadeInRight">
+    </div>
+  </header>
+
+
+  <!-- <div class="ellipse-1"></div>
+  <div class="ellipse-2"></div>
+  <div class="ellipse-3"></div>
+  <div class="ellipse-4"></div>
+  <div class="ellipse-5"></div>
+  <div class="ellipse-6"></div>
+  <div class="ellipse-7"></div>
+  <div class="ellipse-8"></div> -->
+
+  <main class="flex flex-col" style="background-color: #101B26;">
+    <div
+      class="text-xl pt-20 text-white text-center md:text-center w-full h-full pt-5 pb-5 animate__animated animate__fadeIn"
+      style="background-color: #101B26; font-family: 'Dotage'; text-shadow: 2px 2px 0 #101B26, -2px -2px 0 #101B26, 2px -2px 0 #101B26, -2px 2px 0 #101B26;">
+      WHAT IS Kiri?</div>
+    <div
+      class="intro-section w-full flex flex-col-reverse md:flex-center justify-center items-center gap-x-6 px-4 sm:px-16 xl:px-36 animate__animated animate__fadeIn"
+      style="background-color: #101B26;">
+      <div class="flex flex-col items-center md:items-start gap-y-8 animate__animated animate__fadeIn"
+        style="animation-delay: 1s;">
+        <div class="text-md text-center md:text-center mb-10 text-white" style="font-family: 'Dotage';">$Kiri is the
+          most majestic and kind hearted meme on Manta Network.
+          The first true community meme with 0% team allocations🚫, 0 trickery🤡 and 100% burnt🔥 LP.
+          Our mission: to spread love and happiness across Manta Pacific.</div>
+      </div>
+      <div class="mt-4 md:mt-0 flex justify-center items-center mb-10 animate__animated animate__fadeInRight"
+        style="animation-delay: 1s;"><img id="/" src="/"
+          class="animate__animated animate__fadeIn"></div>
+    </div>
+
+    <div
+      class="bridge-section w-full flex flex-col-reverse md:flex-row justify-center items-center md:gap-6 xl:gap-x-20 px-4 sm:px-16 xl:px-36">
+      <div id="tokenomics" class="w-full p-8 rounded-lg shadow-md text-center animate__animated animate__fadeIn"
+        style="background-color: #4DAEDA; animation-delay: 1s;">
+        <h1 class="text-6xl font-bold mb-6" style="color: #101B26; font-family: 'Dotage'">Tokenomics Information
+        </h1>
+        <p class="text-lg mb-6" style="font-family: 'Dotage'; animation-delay: 3.5s;">Total Supply: <span
+            id="totalSupply" class="font-bold">1,000,000,000</span></p>
+        <p class="text-lg mb-6" style="font-family: 'Dotage'; animation-delay: 4.5s;">0% Tax</p>
+        <h2 class="text-2xl font-bold text-gray-800 mt-4 animate__animated animate__fadeIn"
+          style="animation-delay: 1s; font-family: 'Dotage'">100% Liquidity burnt
+        </h2>
+        <h2 class="text-4xl font-bold text-gray-800 mt-4 animate__animated animate__fadeIn"
+          style="animation-delay: 1s; font-family: 'Dotage'">
+          ✅Permanent anti whale protection <br>
+          ✅Max Buy = 9,999,999 Kiri (1%) <br>
+          ✅Max Wallet: 19,999,998 Kiri (2%)
+        </h2>
+      </div>
+    </div>
+    </div>
+
+    <div
+      class="text-xl pt-20 text-white text-center md:text-center w-full h-full pt-5 pb-5 animate__animated animate__fadeIn"
+      style="background-color: #00CCFE; font-family: 'Dotage'; text-shadow: 2px 2px 0 #101B26, -2px -2px 0 #101B26, 2px -2px 0 #101B26, -2px 2px 0 #101B26;">
+      Disclaimer</div>
+    <div
+      class="intro-section w-full flex flex-col-reverse md:flex-center justify-center items-center gap-x-6 px-4 sm:px-16 xl:px-36 animate__animated animate__fadeIn"
+      style="background-color: #00CCFE;">
+      <div class="flex flex-col items-center md:items-start gap-y-8 animate__animated animate__fadeIn"
+        style="animation-delay: 1s;">
+        <div class="text-md text-center md:text-center mb-10 text-white" style="font-family: 'Dotage'; color: #101B26;">
+          $Kiri is a community-based memecoin. It has no utility nor does it have any expectation of value. Its only
+          purpose is to have fun on the Manta Network and promote its ecosystem.</div>
+      </div>
+      <div class="mt-4 md:mt-0 flex justify-center items-center mb-10 animate__animated animate__fadeInRight"
+        style="animation-delay: 1s;"><img id="/" src="./assets/pepe-beany.png"
+          class="animate__animated animate__fadeIn"></div>
+    </div>
+    <div
+      class="text-xl pt-20 text-white text-center md:text-center w-full h-full pt-5 pb-5 animate__animated animate__fadeIn"
+      style="background-color: #101B26; color: #fff; font-family: 'Dotage'; text-shadow: 2px 2px 0 #101B26, -2px -2px 0 #101B26, 2px -2px 0 #101B26, -2px 2px 0 #101B26;">
+      FAQ</div>
+    <div
+      class="intro-section w-full flex flex-col-reverse md:flex-center justify-center items-center gap-x-6 px-4 sm:px-16 xl:px-36 animate__animated animate__fadeIn"
+      style="background-color: #101B26;">
+      <div class="flex flex-col items-center md:items-start gap-y-8 animate__animated animate__fadeIn"
+        style="animation-delay: 1s;">
+        <div class="bg-sky-300 text-md text-center md:text-center mb-10 text-white" style="font-family: 'Dotage';">
+          <div class="container mx-auto my-10 p-8 shadow-lg rounded-lg" style="background-color: #4DAEDA;">
+            <h1 class="text-3xl font-bold mb-6" style="color: #101B26; font-family: 'Dotage';">Frequently Asked
+              Questions</h1>
+
+            <!-- FAQ Item 1 -->
+            <div class="mb-6">
+              <p class="text-lg font-semibold" style="color: #101B26; font-family: 'Dotage';">Q : How to bridge?</p>
+              <p class="text-gray-700 mt-2" style="color: #101B26; font-family: 'Dotage';">
+                <a href="https://www.orbiter.finance/" target="_blank">orbiter.finance</a>
+              </p>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="mb-6">
+              <p class="text-lg font-semibold" style="color: #101B26; font-family: 'Dotage';">Q : Where can I buy?</p>
+              <p class="text-gray-700 mt-2" style="color: #101B26; font-family: 'Dotage';">
+                <a href="https://izumi.finance/trade/swap?outputCurrency=0x7cF9937F62C9785910DE90c9296000f96D9B682E">izumi.finance</a>
+              </p>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="mb-6">
+              <p class="text-lg font-semibold" style="color: #101B26; font-family: 'Dotage';">Q: Tax?</p>
+              <p class="text-gray-700 mt-2" style="color: #101B26; font-family: 'Dotage';">
+                No tax!
+              </p>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="mb-6">
+              <p class="text-lg font-semibold" style="color: #101B26; font-family: 'Dotage';">Q : No presale</p>
+              <p class="text-gray-700 mt-2" style="color: #101B26; font-family: 'Dotage';">
+                Moon now!
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="flex px-44 items-end justify-between animate__animated animate__fadeIn"
+    style="background-color: #101B26;">
+    <div class="flex">
+      <a href="#" class="text-white font-bold text-lg"><img src="/assets/logo.png" alt=""
+          class="animate__animated animate__fadeIn"></a>
+    </div>
+    <!-- Powered by section -->
+    <div class="text-lg mb-10 text-white text-sm animate__animated animate__fadeIn" style="font-family: 'Dotage';">
+      Powered by
+      Manta Pacific</div>
+  </footer>
+
+  <div class="flex items-center space-x-4 animate__animated animate__fadeIn" style="animation-delay: 7s;">
+    <a href="https://t.me/+DuCdhHQgVJw5NmM1" target="_blank"><img class="social-links" src="/" alt=""></a>
+    <a href="https://twitter.com/xAi"><img class="social-links" src="i/" alt=""></a>
+    <a href="https://github.com/x"><img class="social-links" src="/" alt=""></a>
+  </div>
+  <div id="modal" class="modal font-family: Dotage; animate__animated animate__fadeIn" style="animation-delay: 8s;">
+    <div class="flex flex-col px-12 pt-14 gap-y-4 relative">
+      <div class="text-md w-min animate__animated animate__fadeIn"
+        style="font-family: Dotage; color: white; animation-delay: 8.5s;"><a href="/">TELEGRAM</a></div>
+      <div class="text-md w-min animate__animated animate__fadeIn"
+        style="font-family: Dotage; color: white; animation-delay: 9s;"><a class="text-md" href="/">TWITTER</a></div>
+      <button class="absolute modal-close animate__animated animate__fadeIn" onclick="closeModal()"
+        style="color: white; animation-delay: 9.5s;">✖</button>
+    </div>
+  </div>
+  <div class="backdrop animate__animated animate__fadeIn" onclick="closeModal()" style="animation-delay: 10s;"></div>
+  <script>
+    function copySmartContractAddress() {
+      const smartContractAddressElement = document.getElementById("contractAddressText"); // Updated ID
+      const smartContractAddressText = smartContractAddressElement.textContent;
+
+      // Create a temporary input element
+      const tempInput = document.createElement("input");
+      tempInput.value = smartContractAddressText;
+      document.body.appendChild(tempInput);
+
+      // Select the text in the input element
+      tempInput.select();
+      tempInput.setSelectionRange(0, 99999); // For mobile devices
+
+      // Copy the selected text to the clipboard
+      document.execCommand("copy");
+
+      // Remove the temporary input element
+      document.body.removeChild(tempInput);
+
+      // Show the "Copied!" message
+      const copyMessage = smartContractAddressElement.parentElement.querySelector('.copy-message');
+      copyMessage.classList.remove('opacity-0');
+
+      // Hide the "Copied!" message after a short delay (e.g., 1.5 seconds)
+      setTimeout(() => {
+        copyMessage.classList.add('opacity-0');
+      }, 1500);
+    }
+  </script>
+  <script>
+    function toggleVisibility(answerId) {
+      const answer = document.getElementById(answerId);
+      answer.classList.toggle('hidden');
+    }
+  </script>
+  <script>
+    function openModal() {
+      var modal = document.getElementById("modal");
+      var backdrop = document.querySelector(".backdrop");
+      modal.classList.add("open");
+      backdrop.style
+        .display = "block";
+      document.body.classList.add("modal-open");
+    }
+
+    function closeModal() {
+      var modal = document.getElementById("modal");
+      var backdrop = document.querySelector(".backdrop");
+      modal.classList.remove("open");
+      backdrop.style.display = "none";
+      document.body.classList.remove("modal-open");
+    }
+  </script>
+</body>
+
+</html>
