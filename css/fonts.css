@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Dotage';
+    src: url('/font/Dotage_Regular.otf') format('truetype');
+    /* Add other formats if needed */
+  }
+  
+  @font-face {
+    font-family: 'Dotage Pic';
+    src: url('/font/Dotage_Pic-Regular.otf') format('truetype');
+    /* Add other formats if needed */
+  }
+  

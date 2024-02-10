@@ -1,0 +1,402 @@
+/* Reset some default styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-family: 'Dotage';
+  z-index: 2;
+}
+
+body {
+  font-family: 'Poppins';
+  color: #101B26;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/** header **/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  height: 960px;
+}
+
+.header {
+  background: rgba(18, 52, 86, 0.5);
+}
+
+/** main **/
+
+main {
+  flex: 1 0 auto;
+  background-color: #37BBF7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-section {
+  background-color: #0d2740;
+  height: 800px;
+}
+
+.bridge-section {
+  background: #123456;
+  height: 760px;
+}
+
+.token-section {
+  background-color: #0d2740;
+  height: 800px;
+}
+
+.connect-section {
+  min-height: 100vh;
+  height: 960px;
+}
+
+/** footer **/
+
+footer {
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  flex-shrink: 0;
+}
+
+/** font-style **/
+
+.text-xs {
+  font-size: 12px;
+  font-weight: 100;
+}
+
+.text-sm {
+  font-size: 18px;
+  font-weight: 200;
+}
+
+.text-md {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.text-lg {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 42px;
+}
+
+.text-xl {
+  font-size: 64px;
+  font-weight: 700;
+}
+
+.text-blue {
+  color: #00BBFF;
+}
+
+/** background **/
+
+.blue-btn-background {
+  background-color: #00BBFF;
+}
+
+.grey-btn-background {
+  background-color: #555555;
+}
+
+.telegram-background {
+  background-color: #2AABEE;
+}
+
+.github_background {
+  background-color: #000000;
+}
+
+.rounded {
+  border-radius: 100px;
+}
+
+/** Images **/
+
+#logo {
+  width: 320px;
+  height: 40px;
+}
+
+#telegram {
+  width: 50px;
+  height: 50px;
+}
+
+#github {
+  width: 50px;
+  height: 50px;
+}
+
+#docs {
+  width: 50px;
+  height: 50px;
+}
+
+#twitter {
+  width: 50px;
+  height: 50px;
+}
+
+#sniping {
+  width: 318px;
+  height: 80px;
+  max-width: fit-content;
+}
+
+#farming {
+  width: 340px;
+  height: 80px;
+  max-width: fit-content;
+}
+
+#cross_chain {
+  width: 440px;
+  height: 80px;
+  max-width: fit-content;
+}
+
+#phone {
+  width: 315px;
+  height: 600px;
+  max-width: fit-content;
+}
+
+#tokens {
+  width: 279px;
+  height: 338px;
+  max-width: fit-content;
+}
+
+#menu_icon {
+  width: 26px;
+  height: 20px;
+  max-width: fit-content;
+}
+
+/** Video **/
+
+#headerVideo {
+  position: fixed;
+  left: 0;
+  top: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -10;
+}
+
+/** Modal **/
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 100%;
+  background-color: #123456;
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  transition: left 0.3s ease-in-out;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 9998;
+  display: none;
+}
+
+.modal.open {
+  left: 0;
+}
+
+.modal-close {
+  top: 18px;
+  right: 32px;
+}
+
+/**** Mobile Responsive ****/
+
+@media (max-width: 1280px) {
+  header {
+    height: 760px;
+  }
+
+  .intro-section {
+    height: 800px;
+  }
+
+  .bridge-section {
+    height: 1000px;
+  }
+
+  .token-section {
+    height: 720px;
+  }
+
+  .connect-section {
+    height: 900px;
+  }
+
+  .text-sm {
+    font-size: 14px;
+    font-weight: 200;
+  }
+
+  .text-md {
+    font-size: 18px;
+    font-weight: 200;
+  }
+
+  .text-lg {
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  .text-xl {
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 42px;
+  }
+
+  #logo {
+    width: 200px;
+    height: 30px;
+  }
+
+  #social {
+    width: 50px;
+    height: 50px;
+  }
+
+  #github {
+    width: 30px;
+    height: 30px;
+  }
+
+  #docs {
+    width: 30px;
+    height: 30px;
+  }
+
+  #twitter {
+    width: 30px;
+    height: 30px;
+  }
+
+  #sniping {
+    width: 200px;
+    height: 60px;
+  }
+
+  #farming {
+    width: 220px;
+    height: 60px;
+  }
+
+  #cross_chain {
+    width: 300px;
+    height: 60px;
+  }
+
+  #phone {
+    width: 300px;
+    height: 585px;
+  }
+
+  #tokens {
+    width: 220px;
+    height: 260px;
+  }
+}
+
+@media (max-width: 640px) {
+  header {
+    height: 720px;
+  }
+
+  .intro-section {
+    height: 640px;
+  }
+
+  .bridge-section {
+    height: 945px;
+  }
+
+  .token-section {
+    height: 640px;
+  }
+
+  .connect-section {
+    height: 844px;
+  }
+
+  .text-md {
+    font-size: 12px;
+    font-weight: 100;
+  }
+
+  .text-xl {
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  #logo {
+    width: 160px;
+    height: 20px;
+  }
+
+
+  #sniping {
+    width: 140px;
+    height: 40px;
+  }
+
+  #farming {
+    width: 150px;
+    height: 40px;
+  }
+
+  #cross_chain {
+    width: 205px;
+    height: 40px;
+  }
+
+  #phone {
+    width: 286px;
+    height: 545px;
+  }
+
+
+  #tokens {
+    width: 240px;
+    height: 290px;
+  }
+}
